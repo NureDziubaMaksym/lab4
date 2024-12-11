@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">Каталог</a>
+        </div>
+        <div class="nav-right">
+            <a href="/add-product" class="nav-button">Добавить товар</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Каталог товаров</h1>
+        <div class="product-grid">
+            {{range .Catalog}}
+            <div class="product-card">
+                <h3>{{.Name}}</h3>
+                <p>Цена: {{.Price}} руб.</p>
+                <div class="card-actions">
+                    <a href="/add-to-cart?id={{.ID}}" class="button add">Добавить в корзину</a>
+                    <a href="/delete-product?id={{.ID}}" class="button delete">Удалить</a>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </main>
+</body>
+</html>

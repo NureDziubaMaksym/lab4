@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление товара</title>
+</head>
+<body>
+    <h1>Добавить новый товар</h1>
+    <form action="/add-product-submit" method="post">
+        <label for="name">Название:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="price">Цена:</label>
+        <input type="text" id="price" name="price" required>
+        <br>
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="/">Вернуться в каталог</a>
+</body>
+</html>

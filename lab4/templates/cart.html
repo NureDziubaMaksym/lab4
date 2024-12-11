@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+</head>
+<body>
+    <h1>Корзина</h1>
+    <ul>
+        {{range .}}
+        <li>
+            {{.Name}} - {{.Price}} руб.
+            <a href="/delete-from-cart?id={{.ID}}">Удалить</a>
+        </li>
+        {{end}}
+    </ul>
+    <a href="/">Вернуться в каталог</a>
+    <form action="/checkout" method="post">
+        <button type="submit">Оплатить</button>
+    </form>
+</body>
+</html>
